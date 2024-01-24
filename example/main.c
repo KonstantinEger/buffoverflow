@@ -3,11 +3,14 @@
 
 int main() {
     const char some_string[] = "Hello World";
-    char buffer[10] = {0};
+    char your_input[10] = {0};
 
     printf("Type something:\n");
-    scanf("%[^\n]", buffer);
+    // Input lesen & in your_input schreiben, bis [ENTER] gedrückt wird
+    scanf("%[^\n]", your_input);
 
-    printf("\n***\n\n");
-    printf("some_string: %s\nyour input: %s\n", some_string, buffer);
+    printf("\n=========\n");
+    printf("some_string: %s\n", some_string);
+    printf("your_input:  %s\n", your_input);
+    printf("==========\n");
 }

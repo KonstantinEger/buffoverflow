@@ -5,14 +5,13 @@
 #include <string.h>
 
 #define PW_LEN 10
-#define PRINT_PW false
 
 void failed_login(void) {
-    printf("Sorry, wrong password :(\n");
+    printf("Sorry, falsches Password :(\n");
 }
 
 void successful_login(void) {
-    printf("Yay! successful login!\n");
+    printf("Yay! Erfolgreich eingeloggt! Bedingung Nr. 2 erfüllt!\n");
 }
 
 void generate_password(size_t pw_len, char * buffer) {
@@ -21,13 +20,9 @@ void generate_password(size_t pw_len, char * buffer) {
         int rand_ascii = rand_num + 32;
         buffer[i] = (char)rand_ascii;
     }
-
-    if (PRINT_PW) {
-        printf("dbg: generated password: '%s'\n", buffer);
-    }
 }
 
-int main() {
+void must_not_crash(void) {
     char password[PW_LEN+1] = {0};
     char user_input[PW_LEN+1] = {0};
 
@@ -42,4 +37,9 @@ int main() {
     } else {
         failed_login();
     }
+}
+
+int main() {
+    must_not_crash();
+    printf("Nicht gecrasht! Bedingung Nr. 1 erfüllt!\n");
 }
