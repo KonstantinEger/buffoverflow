@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-#define PW_LEN 11
+#define PW_LEN 10
 #define PRINT_PW false
 
 void failed_login(void) {
